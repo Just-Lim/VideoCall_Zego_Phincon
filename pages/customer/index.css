@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.container{
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+}

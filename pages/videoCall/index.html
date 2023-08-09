@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title data-lang="Publishing">Publishing</title>
+    <script src="../../ZegoExpressWebRTC-2.25.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js" integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <style type="text/css">
+         * {
+            font-family: sans-serif;
+        }
+
+        h1,
+        h4 {
+            text-align: center;
+        }
+
+        #remote-video, #local-video{
+            width: 600px;
+            height: 400px;
+            border: 1px solid #dfdfdf;
+            background-color: black;
+        }
+
+        .wrapper{
+            display: flex;
+            margin-top: 2%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>
+        Zego RTC Video Call
+    </h1>
+    <div>
+        <input type="text" id="RoomID" placeholder="RoomID">
+        <input type="text" id="UserID" placeholder="UserID">
+        <input type="text" id="Token" placeholder="Token">
+    </div>
+        
+    <div>
+        <button type="button" onclick="login()">Login</button>
+        <button type="button" id="logout">Logout</button>
+        <button type="button" onclick="startStream()">Start</button>
+        <button type="button" onclick="destroyStream()">Destroy</button>
+    </div>
+
+    <div>
+        <button type="button" onclick="changeVideoSet()">Video</button>
+        <button type="button" onclick="changeAudioSet()">Audio</button>
+        <button type="button" onclick="holdInteraction()">Hold</button>
+    </div>
+
+    <div class="wrapper">
+        <div class="video">
+            <!-- <div id="local-video"></div> -->
+            <video id="local-video" autoplay muted playsinline></video>
+        </div>
+        <!-- <div id="remote-video"></div> -->
+        <video id="remote-video" autoplay playsinline></video>
+    </div>
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
